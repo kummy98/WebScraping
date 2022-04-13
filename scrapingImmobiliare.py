@@ -41,10 +41,11 @@ def scrapeData(website):
             print(i.text.strip() + ": " + k.text.strip().replace("  ", "").replace("\n\n\n", ", "))
         print('\n')
 
-
+#Get all the links in the url page and scrape the content of it
 def getLinksInPage(url):
     page = requests.get(url)
     parsedContent = json.loads(page.content)
+    #i is in the range 0 25, where 25 is the maximum links per page
     for i in range(0, len(parsedContent["results"]), 1):
         scrapeData2(parsedContent["results"][i]["seo"]["url"])
         links.append(parsedContent["results"][i]["seo"]["url"])
