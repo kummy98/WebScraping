@@ -24,6 +24,5 @@ new_p = geopy.Point(new_cord)
 print(geopy.distance.distance(ne, new_p))
 print(sqrt(50**2 + 50**2))
 
-'''
-Paolo was here 
-'''
+
+# Paolo was here
